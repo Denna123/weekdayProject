@@ -56,7 +56,7 @@ app.get("/", function(req, res) {
     // }  else {
     //     day = "Friday";
     // }
-
+ 
     res.render("list", {kindOfDay: day});
 });
 
