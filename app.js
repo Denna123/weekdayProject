@@ -79,13 +79,16 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
 
-
-  
   var item = req.body.newItem;
 
-  items.push(item);
+  if (req.body.list === "Work" || req.body.list === "work" ) {
+    workItems.push(item);
+    res.redirect("/work");
+  } else {
+    items.push(item);
+    res.redirect("/");
+  }
 
-  res.redirect("/");
 });
 
 app.get("/work", function(req, res) {
